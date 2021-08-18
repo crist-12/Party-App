@@ -1,9 +1,12 @@
-import React from 'react'
-import {render} from 'react-dom'
+import React from 'react';
+import {render} from 'react-dom';
+import HomePage from './HomePage';
 
-export default function App() {
-    return (
-        <h1>Hola</h1>
+
+export default function App(props) {
+    return (<>
+        <HomePage/>
+        </>
     )
 }
 

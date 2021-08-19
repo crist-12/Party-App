@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Typography, Button, Grid, TextField, FormHelperText, FormControl, Radio, RadioGroup, FormControlLabel, FormLabel } from '@material-ui/core';
 import { Link } from 'react-router-dom'
 
-export default function CreateRoomPage() {
+export default function CreateRoomPage(props) {
 
 const [defaultVotes, setDefaultVotes] = useState(2);
 const [canPause, setCanPause] = useState(true);
@@ -27,7 +27,7 @@ const handleRoomButtonPressed = () => {
       };
       fetch("create-room", requestOptions)
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        .then((data) => props.history.push('/room/'+data.code));
 }
 
     return (
